@@ -1,1 +1,2 @@
-# Book-Store-Web-Application-EAD-Project-
+# Book-Store-Web-Application-EAD-Project
+Developed a full-stack dynamic Book Store web application using C# in ASP.NET as part of the Enterprise Application Development (EAD) course. The system included secure user authentication, dynamic product management, and time-based user login tracking. Key features involved real-time vector-based search, cart handling, and admin controls for book inventory. Gained hands-on experience in handling complete site architecture, backend logic, and database integration.

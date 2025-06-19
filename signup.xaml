@@ -1,0 +1,133 @@
+﻿<Window x:Class="myEAD.signup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:myEAD"
+        mc:Ignorable="d"
+        Title="signup" Height="650" Width="1000" WindowStyle="None" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Left Sec-->
+        <Border Grid.Column="0" Background="#ffd500" Padding="30" CornerRadius="25 0 0 25">
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="D:\Project\EAD Project\logo1.png" />
+
+
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Padding="20" CornerRadius="0 25 25 0" Background="White">
+            <Grid>
+                <Image  Width="35" Margin="0 4 5 0" Style="{StaticResource _iconApp}" MouseDown="CloseImage_MouseDown" Source="D:\Project\EAD Project\close.png" />
+                <Image  Width="25" Margin="0 4 50 0" Style="{StaticResource _iconApp}" MouseDown="MinimizeImage_MouseDown" Source="D:\Project\EAD Project\mini.png"/>
+
+                <!-- Sign Up Logo -->
+                <TextBlock Text="Sign Up" FontSize="34" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="ExtraBold" Foreground="Black" HorizontalAlignment="Center" Grid.Row="0" Margin="0 100 0 20" />
+
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Name -->
+                    <TextBlock Margin="0 10 0 0" Grid.Row="0" Grid.Column="0" Foreground="Black" FontSize="18" FontFamily="Comic Sans MS" Text="Name" Style="{StaticResource txt}" />
+                    <TextBox Name ="name_txt" FontFamily="Comic Sans MS" Grid.Row="0" Grid.Column="1" Width="200" Height="30" Style="{StaticResource CustomTextBoxStyle}" />
+
+                    <!-- Password -->
+                    <TextBlock Margin="0 10 0 0" Grid.Row="1" Grid.Column="0" Foreground="Black" FontSize="18" FontFamily="Comic Sans MS" Text="Password" Style="{StaticResource txt}" />
+                    <PasswordBox Name="pass_txt" FontFamily="Comic Sans MS" Grid.Row="1" Grid.Column="1" Width="200" Height="30" Style="{StaticResource CustomPasswordBoxStyle}" />
+
+                    <!-- Email -->
+                    <TextBlock Margin="0 10 0 0" Grid.Row="2" Grid.Column="0" FontFamily="Comic Sans MS" FontSize="18" Foreground="Black" Text="Confirm PassWord" Style="{StaticResource txt}" />
+                    <PasswordBox Name="pass1_txt" FontFamily="Comic Sans MS" Grid.Row="2" Grid.Column="1" Width="200" Height="30" Style="{StaticResource CustomPasswordBoxStyle}" />
+
+                    <!-- Card -->
+                    <TextBlock Margin="0 10 0 0" Grid.Row="4" Grid.Column="0" Foreground="Black" FontSize="18" FontFamily="Comic Sans MS" Text="Email" Style="{StaticResource txt}" />
+                    <TextBox Name = "email_txt" FontFamily="Comic Sans MS" Grid.Row="4" Grid.Column="1" Width="200" Height="30" Style="{StaticResource CustomTextBoxStyle}" />
+                </Grid>
+
+                <!-- Sign Up Button -->
+                <Button Content ="Sign Up" FontFamily="Comic Sans MS" Margin=" 0 330 0 0" Width="120" Height="40" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SignupButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Normal State -->
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="10,0"/>
+
+                            <!-- Corner Radius using Border -->
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+
+                            <!-- Hover State -->
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#ffd500"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <TextBlock Text="Login" FontFamily="Comic Sans MS" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,95" MouseDown="Login_MouseDown" >
+                    <TextBlock.TextDecorations>
+                        <TextDecoration Location="Underline"/>
+                    </TextBlock.TextDecorations>
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Style.Triggers>
+                                <!-- Change color on hover -->
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="#ffd500"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+
+                </TextBlock>
+
+
+
+
+
+            </Grid>
+
+
+        </Border>
+
+
+
+
+
+
+
+    </Grid>
+</Window>
